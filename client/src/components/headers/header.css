@@ -1,0 +1,130 @@
+header {
+    min-height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo a {
+    color: #111;
+    text-decoration: none;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin: 0 15px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+header ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ff4d4f;
+    transition: 0.3s;
+}
+
+header ul li a:hover::after {
+    width: 100%;
+}
+
+header ul li a:hover {
+    color: #ff4d4f;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart-icon svg {
+    color: #333;
+    transition: 0.3s;
+}
+
+.cart-icon svg:hover {
+    color: #ff4d4f;
+    transform: scale(1.1);
+}
+
+.cart-icon span {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ff4d4f;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 50%;
+    padding: 4px 7px;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    header ul {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        transition: 0.4s ease;
+    }
+
+    header ul.active {
+        left: 0;
+    }
+
+    header ul li {
+        margin: 20px 0;
+    }
+}
